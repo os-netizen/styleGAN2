@@ -34,15 +34,15 @@ def num_range(s: str) -> List[int]:
 
 #----------------------------------------------------------------------------
 
-@click.command()
-@click.pass_context
-@click.option('--network', 'network_pkl', help='Network pickle filename', required=True)
-@click.option('--seeds', type=num_range, help='List of random seeds')
-@click.option('--trunc', 'truncation_psi', type=float, help='Truncation psi', default=1, show_default=True)
-@click.option('--class', 'class_idx', type=int, help='Class label (unconditional if not specified)')
-@click.option('--noise-mode', help='Noise mode', type=click.Choice(['const', 'random', 'none']), default='const', show_default=True)
-@click.option('--projected-w', help='Projection result file', type=str, metavar='FILE')
-@click.option('--outdir', help='Where to save the output images', type=str, required=True, metavar='DIR')
+# @click.command()
+# @click.pass_context
+# @click.option('--network', 'network_pkl', help='Network pickle filename', required=True)
+# @click.option('--seeds', type=num_range, help='List of random seeds')
+# @click.option('--trunc', 'truncation_psi', type=float, help='Truncation psi', default=1, show_default=True)
+# @click.option('--class', 'class_idx', type=int, help='Class label (unconditional if not specified)')
+# @click.option('--noise-mode', help='Noise mode', type=click.Choice(['const', 'random', 'none']), default='const', show_default=True)
+# @click.option('--projected-w', help='Projection result file', type=str, metavar='FILE')
+# @click.option('--outdir', help='Where to save the output images', type=str, required=True, metavar='DIR')
 def generate_images(
     ctx: click.Context,
     network_pkl: str,
