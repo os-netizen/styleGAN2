@@ -98,6 +98,7 @@ def generate_images(
             img = G.synthesis(w.unsqueeze(0), noise_mode=noise_mode)
             img = (img.permute(0, 2, 3, 1) * 127.5 + 128).clamp(0, 255).to(torch.uint8)
             imgArr=img[0].cpu().numpy()
+            imgArr=imgArr.reshape((1, 3, 256, 256))
             img = PIL.Image.fromarray(img[0].cpu().numpy(), 'RGB').save(f'{outdir}/proj{idx:02d}.png')
         return imgArr
 
